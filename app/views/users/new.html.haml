@@ -1,4 +1,4 @@
-Register here!
+%h1 Register here!
 
 / = form_for @new_user do |f|
 / 	= f.label "Name"
@@ -17,28 +17,42 @@ Register here!
 
 %form#my-form
 	= form_for @new_user do |f|
-		%p
-			%label
-				Name
-				= succeed ":" do
-					%span *
-		%box
-			= f.text_field :user_name, class: "required"
-		%p
-			%label
-				Password
-				= succeed ":" do
-					%span *
-			= f.password_field :password, class: "required"
-		%p
-			%label E-Mail:
-			%input.email{type: "text"}/
-		%p
-			%label Phone:
-			%input.phone{placeholder: "999-999-9999", type: "text"}/
-		%p
-			%label  
-			%button{type: "submit"} Submit
+		%table
+			%tr
+				%td
+					%label
+						Name
+				%td
+					= f.text_field :user_name, class: "more name"
+			%tr
+				%td
+					%label 
+						E-mail:
+						= succeed ":" do
+							%span *
+				%td
+					= f.text_field :email, class: "required more email"
+			%tr
+				%td
+					%label
+						Password
+						= succeed ":" do
+							%span *
+				%td
+					= f.password_field :password, class: "required more password"
+			%tr
+				%td
+					%label 
+						Password Confirmation:
+						= succeed ":" do
+							%span *
+				%td
+					= f.password_field :password_confirmation, class: "required more passwordtwo"
+			%tr
+				%td
+					%label  
+					%button{type: "submit"} Submit
+
 
 / %form{name: "myForm", onsubmit: "return validateForm()"}
 /   First name:

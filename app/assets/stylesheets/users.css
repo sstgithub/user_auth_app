@@ -1,16 +1,55 @@
-#my-form p { 
-    float: left; /* so it doesn't span 100% width */
-    clear: both; /* so every input is in a new line */
-    position: relative; /* to be able to position other elements */
-    margin: .5em 0; 
-}
+/*
+#my-form label { position: center; }
+#my-form label span { color: red; }*/
 
-#my-form box { display: inline-block; float: inherit;}
+#my-form label, 
+#my-form input { display: inline-block; }
 #my-form label { width: 100px; } /* depends on the length of your labels */
 #my-form label span { color: red; } /* required star */
+#my-form input { 
+    padding: 0 .3em; 
+    height: 24px;
+    line-height: 24px; /* for IE */
+    width: 200px;
+    border: 1px solid #ccc;
+}
 
-.required {
-	display: inline-block;
-	background: #FFFAC4;
-
+/* Error highlight */
+#my-form input.invalid {
+    background: #FFFAC4;
+}
+ 
+#my-form .error-icon {
+    position: absolute;
+    top: 0;
+    right: -32px;
+    height: 24px;
+    width: 24px;
+    background: url(http://upload.wikimedia.org/wikipedia/en/8/82/KTXT_Tiny.png) no-repeat;
+    cursor: pointer;
+}
+ 
+/* Error description */
+#my-form .error {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: -195px;
+    z-index: 999;
+    padding: 10px;
+    width: 120px;
+    font-size: 12px;
+    background: #222;
+    color: white;
+}
+ 
+/* Popup arrow */
+#my-form .error:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -20px;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent #222 transparent transparent;
 }
