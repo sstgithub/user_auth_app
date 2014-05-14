@@ -1,16 +1,57 @@
 Register here!
 
-= form_for @new_user do |f|
-	= f.label "Name"
-	= f.text_field :user_name
-	%br
-	= f.label "Email"
-	= f.text_field :email
-	%br
-	= f.label "Password"
-	= f.password_field :password
-	%br
-	= f.label "Password Confirmation"
-	= f.password_field :password_confirmation
-	%br
-	= f.submit "Register"
+/ = form_for @new_user do |f|
+/ 	= f.label "Name"
+/ 	= f.text_field :user_name
+/ 	%br
+/ 	= f.label "Email"
+/ 	= f.text_field :email
+/ 	%br
+/ 	= f.label "Password"
+/ 	= f.password_field :password
+/ 	%br
+/ 	= f.label "Password Confirmation"
+/ 	= f.password_field :password_confirmation
+/ 	%br
+/ 	= f.submit "Register"
+
+%form#my-form
+	= form_for @new_user do |f|
+		%p
+			%label
+				Name
+				= succeed ":" do
+					%span *
+		%box
+			= f.text_field :user_name, class: "required"
+		%p
+			%label
+				Password
+				= succeed ":" do
+					%span *
+			= f.password_field :password, class: "required"
+		%p
+			%label E-Mail:
+			%input.email{type: "text"}/
+		%p
+			%label Phone:
+			%input.phone{placeholder: "999-999-9999", type: "text"}/
+		%p
+			%label  
+			%button{type: "submit"} Submit
+
+/ %form{name: "myForm", onsubmit: "return validateForm()"}
+/   First name:
+/   %input{name: "fname", type: "text"}/
+/   %input{type: "submit", value: "Submit"}/
+
+/ :javascript
+/ 	function validateForm()
+/ 	{
+/ 	var x=document.forms["myForm"]["fname"].value;
+/ 	if (x==null || x=="")
+/ 	  {
+/ 	  alert("First name must be filled out");
+/ 	  return false;
+/ 	  }
+/ 	}

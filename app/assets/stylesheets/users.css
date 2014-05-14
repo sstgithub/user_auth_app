@@ -1,0 +1,16 @@
+#my-form p { 
+    float: left; /* so it doesn't span 100% width */
+    clear: both; /* so every input is in a new line */
+    position: relative; /* to be able to position other elements */
+    margin: .5em 0; 
+}
+
+#my-form box { display: inline-block; float: inherit;}
+#my-form label { width: 100px; } /* depends on the length of your labels */
+#my-form label span { color: red; } /* required star */
+
+.required {
+	display: inline-block;
+	background: #FFFAC4;
+
+}

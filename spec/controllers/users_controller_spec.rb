@@ -8,4 +8,9 @@ describe UsersController do
 			assigns(:user).should eq(user)
 		end
 	end
+
+	describe 'post create' do
+		it 'should create a new user' do
+		end
+	end
 end
