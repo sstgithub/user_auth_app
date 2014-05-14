@@ -16,8 +16,8 @@
 / 	= f.submit "Register"
 
 %form#my-form
-	= form_for @new_user do |f|
-		%table
+	%table
+		= form_for @new_user do |f|
 			%tr
 				%td
 					%label
@@ -50,8 +50,7 @@
 					= f.password_field :password_confirmation, class: "required more passwordtwo"
 			%tr
 				%td
-					%label  
-					%button{type: "submit"} Submit
+					= f.submit "Register"
 
 
 / %form{name: "myForm", onsubmit: "return validateForm()"}

@@ -10,9 +10,9 @@ class UsersController < ApplicationController
 	def create
 		@new_user = User.new(user_params)
 		if @new_user.save
-			redirect_to sessions_path, notice: "You signed up!"
+			redirect_to sessions_path, error: "You signed up!"
 		else
-			render :new, notice: "Change something!"
+			render :new, error: "Change something!"
 		end
 	end
 

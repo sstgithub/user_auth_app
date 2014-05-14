@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
 
-  root to:'sessions#new'
+  #When logged in
+  constraints lambda { |req| !req.session[:user_id].blank? } do
+    root :to => "users#index", as: "dashboard"
+  end
 
-  get "login" => "sessions#new"
+  #When not logged in
+  root to:'sessions#new', as: "login"
+
+  #Others
   get "logout" => "sessions#destroy"
   resources :users
   resources :sessions

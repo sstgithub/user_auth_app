@@ -25,6 +25,10 @@ $(function() {
             error = 'This field is required';
             isValid = false;
         } 
+        // else if (!passwordtwo.value != !password.value) {
+        // 		error = 'Passwords do not match'
+        // 		isValid = false;
+        // }
         else {
             classes = classes.split(/\s/);
             $.each(classes, function(i, k){
