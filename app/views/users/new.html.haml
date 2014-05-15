@@ -15,7 +15,7 @@
 / 	%br
 / 	= f.submit "Register"
 
-%form#my-form
+.form#my-form
 	%table
 		= form_for @new_user do |f|
 			%tr
@@ -31,7 +31,7 @@
 						= succeed ":" do
 							%span *
 				%td
-					= f.text_field :email, class: "required more email"
+					= f.text_field :email, id: "emailer", class: "required more email"
 			%tr
 				%td
 					%label
@@ -50,7 +50,7 @@
 					= f.password_field :password_confirmation, class: "required more passwordtwo"
 			%tr
 				%td
-					= f.submit "Register"
+					= f.submit "Register", id: "registration", class: "submitter"
 
 
 / %form{name: "myForm", onsubmit: "return validateForm()"}

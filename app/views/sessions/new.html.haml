@@ -4,11 +4,12 @@ Login here!
 	= label_tag 			:email
 	= text_field_tag 	:email, params[:email]
 	%br
+	= label_tag						:password
 	= password_field_tag 	:password
 	%br
 	= submit_tag "Login"
 
-= link_to "Register", new_user_path
+= link_to "Register", "/users/new"
 
 / :javascript
 / 	function validateForm()
