@@ -1,20 +1,5 @@
 %h1 Register here!
 
-/ = form_for @new_user do |f|
-/ 	= f.label "Name"
-/ 	= f.text_field :user_name
-/ 	%br
-/ 	= f.label "Email"
-/ 	= f.text_field :email
-/ 	%br
-/ 	= f.label "Password"
-/ 	= f.password_field :password
-/ 	%br
-/ 	= f.label "Password Confirmation"
-/ 	= f.password_field :password_confirmation
-/ 	%br
-/ 	= f.submit "Register"
-
 .form#my-form
 	%table
 		= form_for @new_user do |f|
@@ -51,20 +36,3 @@
 			%tr
 				%td
 					= f.submit "Register", id: "registration", class: "submitter"
-
-
-/ %form{name: "myForm", onsubmit: "return validateForm()"}
-/   First name:
-/   %input{name: "fname", type: "text"}/
-/   %input{type: "submit", value: "Submit"}/
-
-/ :javascript
-/ 	function validateForm()
-/ 	{
-/ 	var x=document.forms["myForm"]["fname"].value;
-/ 	if (x==null || x=="")
-/ 	  {
-/ 	  alert("First name must be filled out");
-/ 	  return false;
-/ 	  }
-/ 	}

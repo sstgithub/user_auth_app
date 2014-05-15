@@ -8,8 +8,9 @@ $(function() {
 	});
 
 	$( "div" ).click(function() {
-  $( this ).toggleClass( "form-two" );
+  $( this ).addClass( "form-two" );
 	});
 
 
 });
+
